@@ -18,6 +18,8 @@ import numpy as np
 import torch
 if torch.cuda.is_available():
     from torch.cuda.amp import autocast
+else:
+    from torch.cpu.amp import autocast
 from transformers import BertModel, BertTokenizer, BertTokenizerFast
 
 from pyserini.encode import DocumentEncoder, QueryEncoder
